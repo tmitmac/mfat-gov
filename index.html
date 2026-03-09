@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ministry of Foreign Affairs | Square Country</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0f2a44',
+            secondary: '#143a5e',
+            accent: '#2563eb',
+            advisoryLow: '#16a34a',
+            advisoryMedium: '#f59e0b',
+            advisoryHigh: '#dc2626',
+            advisoryTop: '#0a0000'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- News Update Banner -->
+<div id="legislation-banner" class="bg-red-600 text-white">
+  <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between text-sm font-medium">
+    <div class="flex items-center flex-wrap">
+      <i data-feather="alert-circle" class="w-4 h-4 mr-2"></i>
+      <span>
+        Alert:
+        <a href="https://tmitmac.github.io/square-country-news/woops.html"
+           class="underline font-semibold focus:outline-none focus:ring-2 focus:ring-yellow-600 rounded">
+          Middle East security situation 
+        </a>
+      </span>
+    </div>
+    <button
+      onclick="document.getElementById('legislation-banner').remove()"
+      class="ml-4"
+      aria-label="Dismiss legislation update banner"
+    >
+      <i data-feather="x" class="w-4 h-4"></i>
+    </button>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="bg-primary text-white">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="h-10 w-10 bg-white/10 rounded-full flex items-center justify-center font-bold">SC</div>
+      <div>
+        <p class="text-sm uppercase tracking-wide">Government of Square Country</p>
+        <h1 class="text-lg font-semibold">Ministry of Foreign Affairs</h1>
+      </div>
+    </a>
+<nav class="hidden md:flex items-center gap-6 text-sm">
+
+  <!-- Main Navigation Links -->
+  <a href="#advisories" class="hover:underline">Travel Advisories</a>
+  <a href="index.html#countries" class="hover:underline">Countries & Regions</a>
+  <a href="#services" class="hover:underline">Consular Services</a>
+  <a href="#news" class="hover:underline">News</a>
+  <a href="#about" class="hover:underline">About</a>
+
+  <!-- Divider -->
+  <div class="h-6 w-px bg-white/30 mx-2"></div>
+<span class="text-xs uppercase tracking-wide opacity-80">SquareTravel</span>
+
+  <!-- SafeTravel Buttons -->
+<a href="register.html"
+   class="px-6 py-2 rounded-full bg-white text-primary font-semibold shadow-md hover:shadow-lg hover:bg-gray-200 hover:text-blue-900 transition">
+   Register
+</a>
+
+  <a href="safetravel-login.html"
+     class="px-4 py-2 rounded-lg  hover:bg-white/10 transition font-semibold">
+     Login
+  </a>
+
+</nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="bg-gradient-to-r from-secondary to-primary text-white">
+  <div class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Protecting Square Country’s interests abroad</h2>
+    <p class="max-w-2xl text-lg opacity-90">Official travel advice, diplomatic updates, and consular support for Square Country citizens and partners worldwide.</p>
+
+<div class="mt-8 bg-white rounded-xl shadow-lg p-4 md:p-6 text-gray-800 max-w-3xl">
+  <label class="block text-sm font-semibold mb-2">Search travel advisories</label>
+  <div class="relative">
+    <input id="search" type="text" placeholder="Search by country or region…" 
+           class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent" />
+    <i data-feather="search" class="absolute right-4 top-3.5 text-gray-400"></i>
+  </div>
+</div>
+    
+  </div>
+</section>
+
+<!-- Travel Advisories -->
+<section id="advisories" class="max-w-7xl mx-auto px-4 py-12">
+  <h3 class="text-2xl font-bold text-primary mb-6">Travel Advisories in the Region</h3>
+
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-white rounded-xl shadow p-6">
+      <div class="flex items-center justify-between mb-3">
+        <h4 class="font-semibold">United Mexican States</h4>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-advisoryLow/10 text-advisoryLow">Level 1 – Exercise normal safety</span>
+      </div>
+      <p class="text-sm text-gray-600">Generally safe. Monitor local news and follow standard precautions.</p>
+      <a href="#" class="text-accent text-sm font-semibold mt-3 inline-block">View details →</a>
+    </div>
+
+    <div class="bg-white rounded-xl shadow p-6">
+      <div class="flex items-center justify-between mb-3">
+        <h4 class="font-semibold">Emerald Country</h4>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-advisoryMedium/10 text-advisoryMedium">Level 2 – Increased caution</span>
+      </div>
+      <p class="text-sm text-gray-600">Political demonstrations reported. Avoid large gatherings.</p>
+      <a href="#" class="text-accent text-sm font-semibold mt-3 inline-block">View details →</a>
+    </div>
+
+    <div class="bg-white rounded-xl shadow p-6">
+      <div class="flex items-center justify-between mb-3">
+        <h4 class="font-semibold">Republic of Rivoria</h4>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-advisoryTop/10 text-advisory4">Level 4 – Do not travel</span>
+      </div>
+      <p class="text-sm text-gray-600">Ongoing security incidents and border instability.</p>
+      <a href="#" class="text-accent text-sm font-semibold mt-3 inline-block">View details →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Countries & Regions -->
+<section id="countries" class="bg-gray-100">
+  <div class="max-w-7xl mx-auto px-4 py-12">
+    <h3 class="text-2xl font-bold text-primary mb-6">Continents & Regions</h3>
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+<a href="europe.html"
+   class="bg-white rounded-lg p-4 shadow text-sm block text-left">
+  Europe & Atlantic
+</a>
+<a href="asia-pacific.html"
+    class="bg-white rounded-lg p-4 shadow text-sm block text-left">
+    Asia-Pacific
+</a>
+<a href="middle-east.html"
+    class="bg-white rounded-lg p-4 shadow text-sm block text-left">
+    Middle East
+</a>
+<a href="africa.html"
+    class="bg-white rounded-lg p-4 shadow text-sm block text-left">
+    Africa
+</a>
+<a href="americas.html"
+    class="bg-white rounded-lg p-4 shadow text-sm block text-left">
+    Americas
+</a>
+<a href="polar.html"
+    class="bg-white rounded-lg p-4 shadow text-sm block text-left">
+    Polar & Remote Regions
+</a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Consular Services -->
+<section id="services" class="max-w-7xl mx-auto px-4 py-12">
+  <h3 class="text-2xl font-bold text-primary mb-6">Consular Services</h3>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-white rounded-xl shadow p-6">
+      <i data-feather="file-text" class="text-accent mb-3"></i>
+      <h4 class="font-semibold mb-2">Passports & Documents</h4>
+      <p class="text-sm text-gray-600">Apply for, renew, or replace Square Country travel documents.</p>
+    </div>
+    <div class="bg-white rounded-xl shadow p-6">
+      <i data-feather="alert-circle" class="text-accent mb-3"></i>
+      <h4 class="font-semibold mb-2">Emergency Assistance</h4>
+      <p class="text-sm text-gray-600">Support for citizens affected by crises overseas.</p>
+    </div>
+    <div class="bg-white rounded-xl shadow p-6">
+      <i data-feather="users" class="text-accent mb-3"></i>
+      <h4 class="font-semibold mb-2">Legal & Welfare Help</h4>
+      <p class="text-sm text-gray-600">Guidance if arrested, hospitalised, or facing hardship abroad.</p>
+    </div>
+  </div>
+</section>
+
+<!-- News & Statements -->
+<section id="news" class="bg-gray-100">
+  <div class="max-w-7xl mx-auto px-4 py-12">
+    <h3 class="text-2xl font-bold text-primary mb-6">News & Official Statements</h3>
+    <div class="space-y-4">
+      <div class="bg-white rounded-lg p-4 shadow">
+        <p class="text-xs text-gray-500">3 March 2026</p>
+        <a href="" class="font-semibold hover:text-blue-600">Prime Minister and Minister of Foreign Affairs Release Shared Statement on Iran War</a>
+      </div>
+      <div class="bg-white rounded-lg p-4 shadow">
+        <p class="text-xs text-gray-500">15 February 2026</p>
+        <a href="" class="font-semibold hover:text-blue-600">Foreign Minister meets regional partners in Helsinki Summit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="max-w-7xl mx-auto px-4 py-12">
+  <h3 class="text-2xl font-bold text-primary mb-6">About the Ministry</h3>
+  <p class="max-w-3xl text-gray-700">The Ministry of Foreign Affairs represents Square Country internationally, manages diplomatic relations, supports citizens overseas, and advances national interests through peaceful cooperation and international law.</p>
+</section>
+
+<!-- Footer -->
+<footer class="bg-primary text-white">
+  <div class="max-w-7xl mx-auto px-4 py-8 grid md:grid-cols-3 gap-6 text-sm">
+    <div>
+      <h4 class="font-semibold mb-2">Contact</h4>
+      <p>Emergency (24/7): +999 400 400</p>
+      <p>Email: foreign.affairs@square.gov.sc</p>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-2">Quick Links</h4>
+      <ul class="space-y-1">
+        <li><a href="#" class="hover:underline">Register your travel</a></li>
+        <li><a href="#" class="hover:underline">Embassies & Missions</a></li>
+        <li><a href="#" class="hover:underline">Careers</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-2">Legal</h4>
+      <p>© 2026 Government of Square Country</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  feather.replace();
+</script>
+<script>
+  feather.replace();
+
+  const searchInput = document.getElementById('search');
+
+  // When user presses Enter, go to search results page
+  searchInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      const query = searchInput.value.trim();
+      if (query) {
+        // Redirect to search results page with query as URL parameter
+        window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

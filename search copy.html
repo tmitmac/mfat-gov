@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Results | Ministry of Foreign Affairs</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0f2a44',
+            secondary: '#143a5e',
+            accent: '#2563eb'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: Inter, system-ui, sans-serif; }
+    .card { transition: box-shadow .2s ease, transform .2s ease; }
+    .card:hover { transform: translateY(-2px); }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- Header -->
+<header class="bg-primary text-white">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="h-10 w-10 bg-white/10 rounded-full flex items-center justify-center font-bold">
+        SC
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-wide opacity-80">Government of Square Country</p>
+        <h1 class="text-lg font-semibold">Ministry of Foreign Affairs</h1>
+      </div>
+    </div>
+
+    <nav class="hidden md:flex gap-6 text-sm">
+      <a href="#" class="hover:underline">Travel Advisories</a>
+      <a href="index.html#countries" class="hover:underline">Countries & Regions</a>
+      <a href="#" class="hover:underline">Consular Services</a>
+      <a href="#" class="hover:underline">News</a>
+      <a href="#" class="hover:underline">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="bg-white border-b">
+  <div class="max-w-4xl mx-auto px-4 py-10">
+    <h2 class="text-2xl font-semibold mb-4">
+      Search travel advisories
+    </h2>
+
+    <form
+      action="search.html"
+      method="GET"
+      class="flex items-center gap-3 bg-gray-50 border rounded-xl p-3 shadow-sm"
+    >
+      <i data-feather="search" class="text-gray-400"></i>
+
+      <input
+        type="search"
+        name="q"
+        id="search-input"
+        placeholder="Search by country or territory"
+        class="flex-1 bg-transparent outline-none text-lg placeholder-gray-400"
+      />
+
+      <button
+        type="submit"
+        class="bg-accent text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition"
+      >
+        Search
+      </button>
+    </form>
+
+    <p id="query-display" class="mt-4 text-gray-600 text-sm"></p>
+  </div>
+</section>
+
+
+
+<!-- Results -->
+<main class="max-w-7xl mx-auto px-4 py-12">
+  <div id="results" class="space-y-6"></div>
+</main>
+
+<script>
+  feather.replace();
+
+   // All countries data with flags
+  const countries = [
+    { name: 'United Mexican States', level: 1, message: 'Demonstrations in major cities. Avoid protests.', flag: 'https://flagcdn.com/mx.svg' },
+    { name: 'Emerald Country', level: 2, message: 'Generally safe. Standard precautions.', flag: 'images/emerald.png' },
+    { name: 'Republic of Rivoria', level: 4, message: 'Extreme military conflict threats', flag: 'images/rivoria.png' },
+    
+// Europe
+    { name: 'France', level: 1, message: 'Demonstrations in major cities. Avoid protests.', flag: 'https://flagcdn.com/fr.svg' },
+    { name: 'United Kingdom', level: 2, message: '', flag: 'https://flagcdn.com/gb.svg' },
+    { name: 'Portugal', level: 2, message: '', flag: 'https://flagcdn.com/pt.svg' },   
+    { name: 'Germany', level: 1, message: 'Generally safe. Standard precautions.', flag: 'https://flagcdn.com/de.svg' },
+    { name: 'Italy', level: 1, message: 'Safe with normal precautions.', flag: 'https://flagcdn.com/it.svg' },
+    { name: 'Spain', level: 1, message: 'Safe overall. Minor disruptions possible.', flag: 'https://flagcdn.com/es.svg' },
+    { name: 'Belgium', level: 2, message: '', flag: 'https://flagcdn.com/be.svg' },
+    { name: 'Netherlands', level: 2, message: '', flag: 'https://flagcdn.com/nl.svg' },
+    
+// Asia-Pacific    
+    { name: 'Japan', level: 1, message: 'Stable. Monitor local advisories.', flag: 'https://flagcdn.com/jp.svg' },
+    { name: 'Australia', level: 1, message: 'Generally safe.', flag: 'https://flagcdn.com/au.svg' },
+    { name: 'New Zealand', level: 1, message: 'Safe for travel.', flag: 'https://flagcdn.com/nz.svg' },
+    { name: 'Philippines', level: 2, message: 'Typhoons and security concerns. Exercise caution.', flag: 'https://flagcdn.com/ph.svg' },
+    { name: 'China', level: 2, message: '', flag: 'https://flagcdn.com/cn.svg' },
+    { name: 'Vietnam', level: 1, message: '', flag: 'https://flagcdn.com/vn.svg' },
+    
+// Middle East    
+    { name: 'Saudi Arabia', level: 2, message: 'Regional tensions. Increased caution advised.', flag: 'https://flagcdn.com/sa.svg' },
+    { name: 'United Arab Emirates', level: 1, message: 'Generally safe.', flag: 'https://flagcdn.com/ae.svg' },
+    { name: 'Yemen', level: 3, message: 'Conflict ongoing. Travel not advised.', flag: 'https://flagcdn.com/ye.svg' },
+    { name: 'Egypt', level: 2, message: 'Caution in border areas.', flag: 'https://flagcdn.com/eg.svg' },
+    { name: 'Iran', level: 4, message: '', flag: 'https://flagcdn.com/ir.svg' },
+    { name: 'Israel', level: 2, message: '', flag: 'https://flagcdn.com/il.svg' },
+    { name: 'Palestine', level: 4, message: '', flag: 'https://flagcdn.com/ps.svg' },
+    
+// Africa   
+    { name: 'South Africa', level: 2, message: 'Exercise increased caution in urban areas.', flag: 'https://flagcdn.com/za.svg' },
+   
+// Americas  
+    { name: 'United States', level: 1, message: 'Generally safe.', flag: 'https://flagcdn.com/us.svg' },
+    { name: 'Canada', level: 1, message: 'Generally safe.', flag: 'https://flagcdn.com/ca.svg' },    
+    { name: 'Mexico', level: 2, message: 'Avoid high-crime areas.', flag: 'https://flagcdn.com/mx.svg' },
+    { name: 'Brazil', level: 2, message: 'Increased caution in cities.', flag: 'https://flagcdn.com/br.svg' },
+    { name: 'Antarctica', level: 1, message: 'Safe with guided tours. Extreme weather precautions required.', flag: 'https://flagcdn.com/aq.svg' },
+    { name: 'Greenland', level: 1, message: 'Monitor harsh weather and medical limitations.', flag: 'https://flagcdn.com/gl.svg' }
+  ];
+
+  const resultsContainer = document.getElementById('results');
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get('q')?.toLowerCase() || '';
+
+  document.getElementById('query-display').textContent =
+    `Showing results for “${query}”`;
+
+  const matches = countries.filter(c =>
+    c.name.toLowerCase().includes(query)
+  );
+
+  if (!matches.length) {
+    resultsContainer.innerHTML = `
+      <div class="bg-white rounded-xl p-10 text-center shadow">
+        <p class="text-gray-600 text-lg">No matching countries found.</p>
+      </div>`;
+  }
+
+  matches.forEach(c => {
+    let badge = {
+      1: 'bg-green-100 text-green-800',
+      2: 'bg-yellow-100 text-yellow-800',
+      3: 'bg-red-100 text-red-800',
+      4: 'bg-black text-white'
+    }[c.level];
+
+    let text = {
+      1: 'Exercise normal safety',
+      2: 'Increased caution',
+      3: 'Reconsider travel',
+      4: 'Do not travel'
+    }[c.level];
+
+    const card = document.createElement('article');
+    card.className = `
+      card bg-white rounded-2xl shadow-sm hover:shadow-md
+      p-6 md:p-8 flex flex-col md:flex-row gap-6
+    `;
+
+    card.innerHTML = `
+      <img src="${c.flag}" alt="" class="w-20 h-12 rounded shadow border">
+
+      <div class="flex-1">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-3">
+          <h3 class="text-xl font-semibold">${c.name}</h3>
+          <span class="px-4 py-1.5 rounded-full text-sm font-semibold ${badge}">
+            Level ${c.level} – ${text}
+          </span>
+        </div>
+
+        <p class="text-gray-700">
+          ${c.message || 'No additional advisory information available.'}
+        </p>
+      </div>
+    `;
+
+    resultsContainer.appendChild(card);
+  });
+</script>
+
+</body>
+</html>

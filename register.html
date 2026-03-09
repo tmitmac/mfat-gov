@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafeTravel Registration | Ministry of Foreign Affairs</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0f2a44',
+            secondary: '#143a5e',
+            accent: '#2563eb'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- Header -->
+<header class="bg-primary text-white">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="h-10 w-10 bg-white/10 rounded-full flex items-center justify-center font-bold">SC</div>
+      <div>
+        <p class="text-sm uppercase tracking-wide">Government of Square Country</p>
+        <h1 class="text-lg font-semibold">SquareTravel Registration</h1>
+      </div>
+    </a>
+  </div>
+</header>
+
+<!-- Page Intro -->
+<section class="max-w-4xl mx-auto px-4 py-12 text-center">
+  <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+    Register Your Travel
+  </h2>
+  <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+    Registering your travel allows the Ministry of Foreign Affairs to contact you 
+    in case of emergency, natural disaster, or security incident abroad.
+  </p>
+</section>
+
+<!-- Options -->
+<section class="max-w-5xl mx-auto px-4 pb-20">
+  <div class="grid md:grid-cols-2 gap-8">
+
+    <!-- Option 1 -->
+    <a href="register-individual.html"
+       class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition block border border-gray-100">
+
+      <div class="mb-6">
+        <div class="h-14 w-14 bg-secondary/10 rounded-full flex items-center justify-center text-secondary text-2xl font-bold">
+          1
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-semibold text-primary mb-3">
+        Register Yourself or Your Family
+      </h3>
+
+      <p class="text-gray-600 mb-6">
+        For individual travellers, couples, or families travelling together. 
+        Includes emergency contact details and trip information.
+      </p>
+
+      <ul class="text-sm text-gray-500 space-y-2 mb-6">
+        <li>• Personal details</li>
+        <li>• Travel itinerary</li>
+        <li>• Emergency contact</li>
+        <li>• Add family members</li>
+      </ul>
+
+      <span class="inline-block px-6 py-2 rounded-full bg-primary text-white font-semibold">
+        Continue →
+      </span>
+    </a>
+
+    <!-- Option 2 -->
+    <a href="register-group.html"
+       class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition block border border-gray-100">
+
+      <div class="mb-6">
+        <div class="h-14 w-14 bg-secondary/10 rounded-full flex items-center justify-center text-secondary text-2xl font-bold">
+          2
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-semibold text-primary mb-3">
+        Register a Group
+      </h3>
+
+      <p class="text-gray-600 mb-6">
+        For schools, tour operators, businesses, or organised travel groups.
+        A designated coordinator manages the registration.
+      </p>
+
+      <ul class="text-sm text-gray-500 space-y-2 mb-6">
+        <li>• Group coordinator details</li>
+        <li>• Passenger list upload</li>
+        <li>• Shared itinerary</li>
+        <li>• Bulk emergency contacts</li>
+      </ul>
+
+      <span class="inline-block px-6 py-2 rounded-full bg-primary text-white font-semibold">
+        Continue →
+      </span>
+    </a>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-primary text-white">
+  <div class="max-w-7xl mx-auto px-4 py-6 text-sm text-center">
+    © 2026 Government of Square Country — Ministry of Foreign Affairs
+  </div>
+</footer>
+
+</body>
+</html>
